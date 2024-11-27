@@ -140,13 +140,13 @@ const updatePost = async (req, res) => {
         )
 
         if(!result) {
-            return res.status(404).json({
-                message: "Post Not Found",
+            return res.status(500).json({
+                message: "Failed to Update Post, Internal Server Error",
             })
         }
 
         return res.status(201).json({
-            message: "All Post Retrieved Successfully",
+            message: "Post Updated Successfully",
             "old Post": existingPost,
             "updated Post": result
         })
@@ -163,6 +163,12 @@ const deletePost = async (req, res) => {
     try {
         
         const {id} = req.params;
+
+        if(!id) {
+            return res.status(400).json({
+                message: "Bad Request"
+            })
+        }
 
         if(!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({
