@@ -1,0 +1,3 @@
+# I still include .env since its just an activity
+package-lock.json
+node_modules/

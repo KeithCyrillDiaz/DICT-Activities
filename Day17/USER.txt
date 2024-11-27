@@ -1,0 +1,28 @@
+USER
+- user registration
+- user login
+- change user password
+- change user email
+
+POSTS
+- create new post
+- retrieve all posts
+- retrieve post by ID
+- update post
+- delete post
+
+COMMENTS
+- create new comment
+- retrieve all comments for a specific post
+- update comment
+- delete comment
+
+CATEGORIES/TAGS
+- create new category
+- create new tag
+- retrieve all categories
+- retrieve all tags
+
+USER PROFILES
+- retrieve user profile info
+- update user profile details

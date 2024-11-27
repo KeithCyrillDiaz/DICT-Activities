@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+    <body>
+        <h1>Contact Form</h1>
+        <form>
+            <label for="name">Name:</label>
+            <!-- 
+                 A-Za-z: Allows uppercase and lowercase alphabetic characters.
+                \s: Allows spaces.
+                +: Ensures at least one or more characters (to prevent an empty input).
+                ()?: optional 
+            -->
+            <input type="text" pattern="^[A-Za-z]{3,}(\s[A-Za-z]{3,})?(\s[A-Z]\.)?\s[A-Za-z]{3,}" placeholder="Enter full name (FN, MI, LN) " id="name" name="name" required title="Please enter in this format (e.g., Bongbong A. Marcos)"><br>
+            <label for="email">Email:</label>
+
+            <!-- 
+                {2,} means "at least 2 times."
+                {2,4} means "between 2 and 4 times."
+                {2} means "exactly 2 times." 
+            -->
+            <!-- The expression [A-Za-z0-9]+@[a-z]+\.[a-z]{2,} is called a regular expression (or regex) -->
+             <!-- title is for popup messages when pattern is not meet -->
+            <input type="email" placeholder="Enter your email" pattern="[A-Za-z0-9]+@[a-z]{3,}+\.[a-z]{2,}" id="email" name="email" required title="Please enter in the format example@gmail.com"><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required
+
+            pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" placeholder="XXXX-XXX-XXXX (e.g., 0976-123-1234)" title="Please enter in the format XXXX-XXX-XXXX"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
